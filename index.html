@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mazza Engineering</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Allan:wght@400;700&family=Bebas+Neue&family=Caveat:wght@400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --primary-color:rgb(0, 64, 255);
+            --secondary-color: #f5f5f5;
+            --dark-color: #333;
+            --light-gray:rgba(196, 196, 196, 0.13);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            line-height: 1.6;
+            color: var(--dark-color);
+        }
+
+        /* Header Styles */
+        .top-bar {
+            background: var(--dark-color);
+            color: white;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary-color) !important;
+            font-size: 24px;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--dark-color) !important;
+            font-weight: 500;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/hero_image.png');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary-custom {
+            background: var(--primary-color);
+            border: none;
+            padding: 12px 30px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 0 10px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            background:rgb(109, 122, 139);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-custom {
+            border: 2px solid white;
+            color: white;
+            padding: 10px 30px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 0 10px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-custom:hover {
+            background: white;
+            color: var(--dark-color);
+        }
+
+        /* Alert Section */
+        .alert-section {
+            background: #fff3cd;
+            padding: 20px 0;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            width: 100%;
+            height: 200px;
+            background: var(--light-gray);
+            margin-bottom: 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--primary-color);
+        }
+
+        .service-card h4 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* Success Section */
+        .success-section {
+            padding: 80px 0;
+            background: var(--secondary-color);
+        }
+
+        .success-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark-color);
+            font-weight: bold;
+        }
+
+        .success-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 250px;
+            gap: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .success-item {
+            background: var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .success-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .success-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .success-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .success-item:hover img {
+            filter: blur(3px);
+            transform: scale(1.05);
+        }
+
+        .overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .overlay p {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .success-item.large {
+            grid-row: span 2;
+        }
+
+        .success-item.wide {
+            grid-column: span 2;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .process-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark-color);
+            font-weight: bold;
+        }
+
+        .process-step {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .process-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .process-step h4 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .success-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 250px;
+            }
+            
+            .success-item.large,
+            .success-item.wide {
+                grid-row: span 1;
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container-fluid px-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <span><i class="fas fa-phone"></i>  (011) 025-7662</span>
+                    <span class="ms-4"><i class="fas fa-envelope"></i>  0110257662@vox.co.za</span>
+                </div>
+                <div class="col-md-6 text-end">
+                    <span><i class="fas fa-map-marker-alt"></i> Unit 5, 3 Brighton Road, Bramley View Ext 6, Johannesburg</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand" href="#">
+                <img src="assets/images/logo.jpg" alt="BrickTower Logo" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service.html">SERVICES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">CONTACT US</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Pride of workmanship combined with a superb level of skill.</h1>
+                <p>Specialists in precision machining, trusted by top clients for quality, versatility, and fast turnaround.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn-primary-custom text-white">DISCOVER MORE</a>
+                    <a href="#contact" class="btn-outline-custom">LEARN MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <h4>Services</h4>
+                        <p>Explore our precision machining capabilities, from CNC milling to boring and custom one-off jobs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <h4>Why Mazza?</h4>
+                        <p>Trusted by industry leaders like SASOL and BMG for quality, versatility, and reliability.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h4>Our Equipment</h4>
+                        <p>State-of-the-art machines under 10 years old, expertly maintained for consistent results.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-roller"></i>
+                        </div>
+                        <h4>Contact Us</h4>
+                        <p>Get in touch for quotes, project discussions, or more information.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#services" class="btn-primary-custom text-white">All services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Section -->
+    <section class="success-section">
+        <div class="container">
+            <h2>OUR SUCCESS</h2>
+            <div class="success-grid">
+                <div class="success-item large">
+                    <img src="assets/images/image.jpeg" alt="Success Story 1">
+                    <div class="overlay">
+                        <h3>Precision Engineering</h3>
+                        <p>State-of-the-art machining capabilities delivering exceptional results</p>
+                    </div>
+                </div>
+                <div class="success-item">
+                    <img src="assets/images/image_2.jpeg" alt="Success Story 2">
+                    <div class="overlay">
+                        <h3>Quality Control</h3>
+                        <p>Rigorous testing and inspection protocols</p>
+                    </div>
+                </div>
+                <div class="success-item">
+                    <img src="assets/images/image_3.jpeg" alt="Success Story 3">
+                    <div class="overlay">
+                        <h3>Custom Solutions</h3>
+                        <p>Tailored engineering solutions for unique challenges</p>
+                    </div>
+                </div>
+                <div class="success-item wide">
+                    <img src="assets/images/image_4.jpeg" alt="Success Story 4">
+                    <div class="overlay">
+                        <h3>Industry Leader</h3>
+                        <p>Trusted by top companies for complex manufacturing needs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#projects" class="btn-primary-custom text-white">Open Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <h2> Frequently Asked Questions</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="process-number">01</div>
+                        <h4> What industries do you serve?</h4>
+                        <p>We serve a wide range of industries, including mining, manufacturing, and energy—working with clients like SASOL, BMG, and David Brown.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="process-number">02</div>
+                        <h4> Do you handle one-off custom jobs?</h4>
+                        <p> Yes! We specialize in short runs and one-off components with frequent changeovers.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="process-number">03</div>
+                        <h4>What types of machines do you use?</h4>
+                        <p>We use modern, well-maintained machines including CNCs, boring mills, vertical mills, radial drills, and more.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="process-number">04</div>
+                        <h4>How quickly can you deliver?</h4>
+                        <p>Lead times vary by job, but our streamlined setup and skilled team allow us to respond quickly and efficiently.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-building"></i> BRICKTOWER</h5>
+                    <p>Building disaster-resistant homes with style and functionality. Your safety is our priority.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>&copy; 2024 BrickTower. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.background = 'white';
+                navbar.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

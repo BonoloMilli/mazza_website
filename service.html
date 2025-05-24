@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - BrickTower Construction & Architecture</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: rgb(0, 64, 255);
+            --secondary-color: #f5f5f5;
+            --dark-color: #333;
+            --light-gray: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+        }
+
+        /* Header Styles */
+        .top-bar {
+            background: var(--dark-color);
+            color: white;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary-color) !important;
+            font-size: 24px;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--dark-color) !important;
+            font-weight: 500;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23e0e0e0" width="1200" height="400"/><text x="600" y="200" text-anchor="middle" font-size="30" fill="%23999">Services Header</text></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb-custom {
+            background: transparent;
+            padding: 0;
+            margin: 0;
+        }
+
+        .breadcrumb-custom .breadcrumb-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb-custom .breadcrumb-item.active {
+            color: var(--primary-color);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .service-image {
+            height: 250px;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-image i {
+            font-size: 80px;
+            color: var(--primary-color);
+        }
+
+        .service-content {
+            padding: 30px;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .service-content p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .service-features li {
+            padding: 5px 0;
+            color: #666;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-features li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+
+        .service-price {
+            background: var(--secondary-color);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .service-price .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .service-price .price-note {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .btn-service {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-service:hover {
+            background: #e68900;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Detailed Services Section */
+        .detailed-service {
+            background: white;
+            margin-bottom: 50px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .detailed-service-content {
+            padding: 50px;
+        }
+
+        .detailed-service-image {
+            height: 400px;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 18px;
+        }
+
+        .detailed-service-image i {
+            font-size: 100px;
+            color: var(--primary-color);
+        }
+
+        .detailed-service h3 {
+            font-size: 2rem;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .detailed-service p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Process Section */
+        .process-section {
+            background: var(--secondary-color);
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-number {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h4 {
+            font-size: 1.3rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .process-step p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-color);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn-cta {
+            background: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 15px 40px;
+            font-weight: bold;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .btn-cta:hover {
+            background: var(--dark-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .detailed-service-content {
+                padding: 30px;
+            }
+            
+            .detailed-service h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <span><i class="fas fa-phone"></i> (347) 227-7536</span>
+                    <span class="ms-4"><i class="fas fa-envelope"></i> info@example.com</span>
+                </div>
+                <div class="col-md-6 text-end">
+                    <span><i class="fas fa-map-marker-alt"></i> 5 Bowling Green, New York NY 10004</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-building"></i> BRICKTOWER
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service.html">SERVICES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">CONTACT US</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb" class="breadcrumb-custom">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active">Services</li>
+                        </ol>
+                    </nav>
+                    <h1>Our Services</h1>
+                    <p class="lead">Comprehensive Construction & Architecture Solutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>What We Offer</h2>
+                        <p>From initial design to final construction, we provide complete disaster-resistant building solutions tailored to your needs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Architecture Design</h3>
+                            <p>Custom architectural designs that combine aesthetic appeal with disaster-resistant features and sustainable building practices.</p>
+                            <ul class="service-features">
+                                <li>3D Modeling & Visualization</li>
+                                <li>Structural Engineering</li>
+                                <li>Disaster-Resistant Planning</li>
+                                <li>Energy Efficiency Design</li>
+                            </ul>
+                            <div class="service-price">
+                                <div class="price">Starting at $5,000</div>
+                                <div class="price-note">Per project consultation</div>
+                            </div>
+                            <a href="#contact" class="btn-service">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Construction Services</h3>
+                            <p>Professional construction services using advanced materials and techniques for maximum durability and safety.</p>
+                            <ul class="service-features">
+                                <li>Disaster-Resistant Construction</li>
+                                <li>Foundation & Structural Work</li>
+                                <li>Quality Material Selection</li>
+                                <li>Project Management</li>
+                            </ul>
+                            <div class="service-price">
+                                <div class="price">$150-300/sq ft</div>
+                                <div class="price-note">Depending on specifications</div>
+                            </div>
+                            <a href="#contact" class="btn-service">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Home Renovation</h3>
+                            <p>Transform your existing home with disaster-resistant upgrades and modern improvements that enhance safety and value.</p>
+                            <ul class="service-features">
+                                <li>Structural Reinforcement</li>
+                                <li>Weather-Resistant Upgrades</li>
+                                <li>Interior/Exterior Renovation</li>
+                                <li>Energy Efficiency Improvements</li>
+                            </ul>
+                            <div class="service-price">
+                                <div class="price">$25,000+</div>
+                                <div class="price-note">Based on scope of work</div>
+                            </div>
+                            <a href="#contact" class="btn-service">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Plumbing Systems</h3>
+                            <p>Complete plumbing solutions with disaster-resistant piping systems and emergency backup features for reliable water supply.</p>
+                            <ul class="service-features">
+                                <li>Emergency Water Systems</li>
+                                <li>Leak-Resistant Piping</li>
+                                <li>Water Filtration Systems</li>
+                                <li>Maintenance & Repair</li>
+                            </ul>
+                            <div class="service-price">
+                                <div class="price">$3,000-15,000</div>
+                                <div class="price-note">Complete system installation</div>
+                            </div>
+                            <a href="#contact" class="btn-service">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Electrical Work</h3>
+                            <p>Safe and reliable electrical installations with backup power systems and weather-resistant components for continuous operation.</p>
+                            <ul class="service-features">
+                                <li>Backup Generator Systems</li>
+                                <li>Weather-Resistant Wiring</li>
+                                <li>Smart Home Integration</li>
+                                <li>Safety Inspections</li>
+                            </ul>
+                            <div class="service-price">
+                                <div class="price">$2,500-12,000</div>
+                                <div class="price-note">Full electrical system</div>
+                            </div>
+                            <a href="#contact" class="btn-service">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <i class="fas fa-paint-roller"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Painting & Finishing</h3>
+                            <p>Premium painting services with weather-resistant coatings and protective finishes for long-lasting beauty and protection.</p>
+                            <ul class="service-features">
+                                <li>Weather-Resistant Coatings</li>
+                                <li>Interior/Exterior Painting</li>
+                                <li>Protective Sealants</li>
+                                <li>Color Consultation</li>
+                            </ul>
+                            <div class="service-price">
+                                <div class="price">$2-8/sq ft</div>
+                                <div class="price-note">Interior and exterior</div>
+                            </div>
+                            <a href="#contact" class="btn-service">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Services -->
+    <section class="content-section" style="background: var(--secondary-color);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Specialized Services</h2>
+                        <p>Our expertise in disaster-resistant construction sets us apart from traditional builders.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="detailed-service">
+                <div class="row g-0">
+                    <div class="col-lg-6">
+                        <div class="detailed-service-image">
+                            <i class="fas fa-shield-alt"></i>
+                            <span class="ms-3">Disaster-Resistant Design</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="detailed-service-content">
+                            <h3>Disaster-Resistant Construction</h3>
+                            <p>Our specialized approach to construction incorporates advanced engineering techniques and materials specifically designed to withstand natural disasters including hurricanes, earthquakes, floods, and extreme weather conditions.</p>
+                            <p>We use reinforced concrete foundations, impact-resistant windows, storm-resistant roofing systems, and advanced drainage solutions to ensure your home remains safe and functional during and after natural disasters.</p>
+                            <ul class="service-features">
+                                <li>Hurricane-resistant design and materials</li>
+                                <li>Earthquake-resistant structural engineering</li>
+                                <li>Flood-resistant construction techniques</li>
+                                <li>Fire-resistant materials and design</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detailed-service">
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="detailed-service-image">
+                            <i class="fas fa-leaf"></i>
+                            <span class="ms-3">Sustainable Building</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="detailed-service-content">
+                            <h3>Sustainable Building Practices</h3>
+                            <p>Environmental responsibility is at the core of our construction philosophy. We integrate sustainable materials, energy-efficient systems, and eco-friendly construction practices into every project.</p>
+                            <p>Our sustainable approach not only helps protect the environment but also reduces long-term operating costs and creates healthier living spaces for our clients.</p>
+                            <ul class="service-features">
+                                <li>Solar panel integration and renewable energy</li>
+                                <li>Energy-efficient HVAC and insulation systems</li>
+                                <li>Sustainable and recycled building materials</li>
+                                <li>Water conservation and rainwater harvesting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="content-section process-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Our Service Process</h2>
+                        <p>A streamlined approach that ensures quality results and client satisfaction at every step.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <h4>Consultation</h4>
+                        <p>Initial meeting to understand your needs, assess the site, and discuss disaster-resistant requirements and budget considerations.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <h4>Design & Planning</h4>
+                        <p>Create detailed architectural plans incorporating disaster-resistant features, obtain necessary permits, and finalize project timeline.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <h4>Construction</h4>
+                        <p>Execute the project using quality materials and expert craftsmanship while maintaining regular communication and quality checkpoints.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <h4>Completion</h4>
+                        <p>Final inspection, quality assurance testing, project handover, and ongoing support to ensure your complete satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Ready to Start Your Project?</h2>
+                    <p>Get a free consultation and quote for your disaster-resistant construction project today.</p>
+                    <a href="#contact" class="btn-cta">Get Free Quote</a>
+                    <a href="tel:+13472277536" class="btn-cta">Call Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-building"></i> BRICKTOWER</h5>
+                    <p>Building disaster-resistant homes with style and functionality. Your safety is our priority.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>&copy; 2024 BrickTower. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.background = 'white';
+                navbar.style.backdropFilter = 'none';
+            }
+        });
+
+        // Service card hover effects
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
