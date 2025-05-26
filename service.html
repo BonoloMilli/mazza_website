@@ -62,7 +62,7 @@
 
         /* Page Header */
         .page-header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23e0e0e0" width="1200" height="400"/><text x="600" y="200" text-anchor="middle" font-size="30" fill="%23999">Services Header</text></svg>');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/assets/images/hero_image.png');
             background-size: cover;
             background-position: center;
             height: 400px;
@@ -119,18 +119,16 @@
 
         /* Service Cards */
         .service-card {
+            height: 100%;
+            padding: 30px;
             background: white;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-            height: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
         }
 
         .service-image {
@@ -174,20 +172,21 @@
         }
 
         .service-features li {
-            padding: 5px 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
             color: #666;
             position: relative;
             padding-left: 25px;
         }
 
         .service-features li:before {
-            content: '\f00c';
+            content: '\f013';  /* Machine gear icon */
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             color: var(--primary-color);
             position: absolute;
             left: 0;
-            top: 5px;
+            top: 12px;
         }
 
         .service-price {
@@ -382,24 +381,9 @@
     </style>
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <span><i class="fas fa-phone"></i> (347) 227-7536</span>
-                    <span class="ms-4"><i class="fas fa-envelope"></i> info@example.com</span>
-                </div>
-                <div class="col-md-6 text-end">
-                    <span><i class="fas fa-map-marker-alt"></i> 5 Bowling Green, New York NY 10004</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-        <div class="container">
+   <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container-fluid px-5">
             <a class="navbar-brand" href="#">
                 <img src="assets/images/logo.jpg" alt="BrickTower Logo" height="50">
             </a>
@@ -410,7 +394,8 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
-                    <li class="nav-item"><a class="nav-link" href="service.html">SERVICES</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="service.html">SERVICES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">GALLERY</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
                 </ul>
             </div>
@@ -429,7 +414,6 @@
                         </ol>
                     </nav>
                     <h1>Our Services</h1>
-                    <p class="lead">Comprehensive Construction & Architecture Solutions</p>
                 </div>
             </div>
         </div>
@@ -441,141 +425,60 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2>What We Offer</h2>
-                        <p>From initial design to final construction, we provide complete disaster-resistant building solutions tailored to your needs.</p>
+                        <h2>Our Machining Services</h2>
+                        <p>State-of-the-art equipment and expertise for precision manufacturing solutions</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
+
+            <!-- Machining Capabilities -->
+            <div class="row mb-5">
+                <div class="col-lg-6">
                     <div class="service-card">
-                        <div class="service-image">
-                            <i class="fas fa-drafting-compass"></i>
-                        </div>
                         <div class="service-content">
-                            <h3>Architecture Design</h3>
-                            <p>Custom architectural designs that combine aesthetic appeal with disaster-resistant features and sustainable building practices.</p>
+                            <h3>Machining Capabilities</h3>
                             <ul class="service-features">
-                                <li>3D Modeling & Visualization</li>
-                                <li>Structural Engineering</li>
-                                <li>Disaster-Resistant Planning</li>
-                                <li>Energy Efficiency Design</li>
+                                <li>Horizontal Boring Mill (130mm spindle, 1600mm x 2000mm)</li>
+                                <li>2x Horizontal Boring Mills (100mm spindle, 1250mm x 1700mm)</li>
+                                <li>Vertical Boring Mill (1500mm table, 2 heads)</li>
+                                <li>2x Radial Arm Drills</li>
+                                <li>Elga Mill (1000mm x 1000mm x 1000mm)</li>
+                                <li>Plainer/Miller (6000mm x 2100mm x 1500mm)</li>
+                                <li>CNC Vertical Machine Centre</li>
+                                <li>Auto Feed Power Saw</li>
+                                <li>Tool Grinders and Drill Sharpeners</li>
                             </ul>
-                            <div class="service-price">
-                                <div class="price">Starting at $5,000</div>
-                                <div class="price-note">Per project consultation</div>
-                            </div>
-                            <a href="#contact" class="btn-service">Get Quote</a>
+                            <a href="#contact" class="btn-service">Request Quote</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card">
-                        <div class="service-image">
-                            <i class="fas fa-hard-hat"></i>
-                        </div>
-                        <div class="service-content">
-                            <h3>Construction Services</h3>
-                            <p>Professional construction services using advanced materials and techniques for maximum durability and safety.</p>
-                            <ul class="service-features">
-                                <li>Disaster-Resistant Construction</li>
-                                <li>Foundation & Structural Work</li>
-                                <li>Quality Material Selection</li>
-                                <li>Project Management</li>
-                            </ul>
-                            <div class="service-price">
-                                <div class="price">$150-300/sq ft</div>
-                                <div class="price-note">Depending on specifications</div>
+
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <div class="service-card">
+                                <div class="service-content">
+                                    <h3>Jobbing & Subcontracting</h3>
+                                    <ul class="service-features">
+                                        <li>Focus on short production runs</li>
+                                        <li>Rapid changeovers & daily setup development</li>
+                                        <li>Custom manufacturing solutions</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <a href="#contact" class="btn-service">Get Quote</a>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card">
-                        <div class="service-image">
-                            <i class="fas fa-home"></i>
-                        </div>
-                        <div class="service-content">
-                            <h3>Home Renovation</h3>
-                            <p>Transform your existing home with disaster-resistant upgrades and modern improvements that enhance safety and value.</p>
-                            <ul class="service-features">
-                                <li>Structural Reinforcement</li>
-                                <li>Weather-Resistant Upgrades</li>
-                                <li>Interior/Exterior Renovation</li>
-                                <li>Energy Efficiency Improvements</li>
-                            </ul>
-                            <div class="service-price">
-                                <div class="price">$25,000+</div>
-                                <div class="price-note">Based on scope of work</div>
+                        
+                        <div class="col-12">
+                            <div class="service-card">
+                                <div class="service-content">
+                                    <h3>Efficiency & Administration</h3>
+                                    <ul class="service-features">
+                                        <li>Use of intelligent computer systems</li>
+                                        <li>Reliable, well-maintained modern machinery (less than 10 years old)</li>
+                                        <li>Streamlined workflow processes</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <a href="#contact" class="btn-service">Get Quote</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card">
-                        <div class="service-image">
-                            <i class="fas fa-tint"></i>
-                        </div>
-                        <div class="service-content">
-                            <h3>Plumbing Systems</h3>
-                            <p>Complete plumbing solutions with disaster-resistant piping systems and emergency backup features for reliable water supply.</p>
-                            <ul class="service-features">
-                                <li>Emergency Water Systems</li>
-                                <li>Leak-Resistant Piping</li>
-                                <li>Water Filtration Systems</li>
-                                <li>Maintenance & Repair</li>
-                            </ul>
-                            <div class="service-price">
-                                <div class="price">$3,000-15,000</div>
-                                <div class="price-note">Complete system installation</div>
-                            </div>
-                            <a href="#contact" class="btn-service">Get Quote</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card">
-                        <div class="service-image">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <div class="service-content">
-                            <h3>Electrical Work</h3>
-                            <p>Safe and reliable electrical installations with backup power systems and weather-resistant components for continuous operation.</p>
-                            <ul class="service-features">
-                                <li>Backup Generator Systems</li>
-                                <li>Weather-Resistant Wiring</li>
-                                <li>Smart Home Integration</li>
-                                <li>Safety Inspections</li>
-                            </ul>
-                            <div class="service-price">
-                                <div class="price">$2,500-12,000</div>
-                                <div class="price-note">Full electrical system</div>
-                            </div>
-                            <a href="#contact" class="btn-service">Get Quote</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card">
-                        <div class="service-image">
-                            <i class="fas fa-paint-roller"></i>
-                        </div>
-                        <div class="service-content">
-                            <h3>Painting & Finishing</h3>
-                            <p>Premium painting services with weather-resistant coatings and protective finishes for long-lasting beauty and protection.</p>
-                            <ul class="service-features">
-                                <li>Weather-Resistant Coatings</li>
-                                <li>Interior/Exterior Painting</li>
-                                <li>Protective Sealants</li>
-                                <li>Color Consultation</li>
-                            </ul>
-                            <div class="service-price">
-                                <div class="price">$2-8/sq ft</div>
-                                <div class="price-note">Interior and exterior</div>
-                            </div>
-                            <a href="#contact" class="btn-service">Get Quote</a>
                         </div>
                     </div>
                 </div>
@@ -583,136 +486,17 @@
         </div>
     </section>
 
-    <!-- Detailed Services -->
-    <section class="content-section" style="background: var(--secondary-color);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h2>Specialized Services</h2>
-                        <p>Our expertise in disaster-resistant construction sets us apart from traditional builders.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="detailed-service">
-                <div class="row g-0">
-                    <div class="col-lg-6">
-                        <div class="detailed-service-image">
-                            <i class="fas fa-shield-alt"></i>
-                            <span class="ms-3">Disaster-Resistant Design</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="detailed-service-content">
-                            <h3>Disaster-Resistant Construction</h3>
-                            <p>Our specialized approach to construction incorporates advanced engineering techniques and materials specifically designed to withstand natural disasters including hurricanes, earthquakes, floods, and extreme weather conditions.</p>
-                            <p>We use reinforced concrete foundations, impact-resistant windows, storm-resistant roofing systems, and advanced drainage solutions to ensure your home remains safe and functional during and after natural disasters.</p>
-                            <ul class="service-features">
-                                <li>Hurricane-resistant design and materials</li>
-                                <li>Earthquake-resistant structural engineering</li>
-                                <li>Flood-resistant construction techniques</li>
-                                <li>Fire-resistant materials and design</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="detailed-service">
-                <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2">
-                        <div class="detailed-service-image">
-                            <i class="fas fa-leaf"></i>
-                            <span class="ms-3">Sustainable Building</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 order-lg-1">
-                        <div class="detailed-service-content">
-                            <h3>Sustainable Building Practices</h3>
-                            <p>Environmental responsibility is at the core of our construction philosophy. We integrate sustainable materials, energy-efficient systems, and eco-friendly construction practices into every project.</p>
-                            <p>Our sustainable approach not only helps protect the environment but also reduces long-term operating costs and creates healthier living spaces for our clients.</p>
-                            <ul class="service-features">
-                                <li>Solar panel integration and renewable energy</li>
-                                <li>Energy-efficient HVAC and insulation systems</li>
-                                <li>Sustainable and recycled building materials</li>
-                                <li>Water conservation and rainwater harvesting</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="content-section process-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h2>Our Service Process</h2>
-                        <p>A streamlined approach that ensures quality results and client satisfaction at every step.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="process-step">
-                        <div class="process-number">1</div>
-                        <h4>Consultation</h4>
-                        <p>Initial meeting to understand your needs, assess the site, and discuss disaster-resistant requirements and budget considerations.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="process-step">
-                        <div class="process-number">2</div>
-                        <h4>Design & Planning</h4>
-                        <p>Create detailed architectural plans incorporating disaster-resistant features, obtain necessary permits, and finalize project timeline.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="process-step">
-                        <div class="process-number">3</div>
-                        <h4>Construction</h4>
-                        <p>Execute the project using quality materials and expert craftsmanship while maintaining regular communication and quality checkpoints.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="process-step">
-                        <div class="process-number">4</div>
-                        <h4>Completion</h4>
-                        <p>Final inspection, quality assurance testing, project handover, and ongoing support to ensure your complete satisfaction.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2>Ready to Start Your Project?</h2>
-                    <p>Get a free consultation and quote for your disaster-resistant construction project today.</p>
-                    <a href="#contact" class="btn-cta">Get Free Quote</a>
-                    <a href="tel:+13472277536" class="btn-cta">Call Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h5><i class="fas fa-building"></i> BRICKTOWER</h5>
+                    <h5>MAZZA ENGINEERING</h5>
                     <p>Building disaster-resistant homes with style and functionality. Your safety is our priority.</p>
                 </div>
                 <div class="col-md-6 text-end">
-                    <p>&copy; 2024 BrickTower. All rights reserved.</p>
+                    <p>All rights reserved.</p>
                     <div class="social-links">
                         <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
                         <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>

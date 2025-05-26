@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - BrickTower Construction & Architecture</title>
+    <title>About Us - MAZZA Engineering</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -27,7 +27,6 @@
             line-height: 1.6;
             color: var(--dark-color);
         }
-
 
         /* Header Styles */
         .top-bar {
@@ -62,7 +61,7 @@
 
         /* Page Header */
         .page-header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23e0e0e0" width="1200" height="400"/><text x="600" y="200" text-anchor="middle" font-size="30" fill="%23999">About Us Header</text></svg>');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/assets/images/image_10.jpeg') no-repeat center center;
             background-size: cover;
             background-position: center;
             height: 400px;
@@ -144,18 +143,6 @@
             color: #666;
         }
 
-        .story-image {
-            flex: 1;
-            background: var(--light-gray);
-            height: 400px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 18px;
-        }
-
         /* Values Section */
         .values-section {
             background: var(--secondary-color);
@@ -192,149 +179,117 @@
             line-height: 1.6;
         }
 
-        /* Team Section */
-        .team-section {
-            background: white;
-        }
-
-        .team-member {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .team-photo {
-            width: 250px;
-            height: 250px;
-            background: var(--light-gray);
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 18px;
-            overflow: hidden;
-        }
-
-        .team-photo i {
-            font-size: 80px;
-            color: var(--primary-color);
-        }
-
-        .team-member h4 {
-            font-size: 1.4rem;
-            margin-bottom: 5px;
-            color: var(--dark-color);
-        }
-
-        .team-member .position {
-            color: var(--primary-color);
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-
-        .team-member p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        .social-links a {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            margin: 0 5px;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--dark-color);
-        }
-
-        /* Stats Section */
-        .stats-section {
-            background: var(--primary-color);
-            color: white;
+        /* Certificate Section Styles - SECURE PDF VIEWER */
+        .certificate-section {
+            background: var(--secondary-color);
             padding: 60px 0;
         }
 
-        .stat-item {
-            text-align: center;
-            padding: 20px;
+        .pdf-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
         }
 
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Mission Vision Section */
-        .mission-vision {
-            background: var(--secondary-color);
-        }
-
-        .mission-card, .vision-card {
+        .secure-pdf-viewer {
+            position: relative;
             background: white;
-            padding: 40px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            height: 100%;
+            overflow: hidden;
         }
 
-        .mission-card h3, .vision-card h3 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+        .pdf-toolbar {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-bottom: 1px solid #dee2e6;
             display: flex;
+            justify-content: between;
             align-items: center;
             gap: 15px;
         }
 
-        .mission-card p, .vision-card p {
-            color: #666;
-            font-size: 1.1rem;
-            line-height: 1.7;
+        .pdf-title {
+            font-weight: 600;
+            color: var(--dark-color);
+            flex-grow: 1;
         }
 
-        /* CTA Section */
-        .cta-section {
-            background: var(--dark-color);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
+        .security-notice {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
         }
 
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .btn-primary-custom {
-            background: var(--primary-color);
+        .pdf-frame {
+            width: 100%;
+            height: 600px;
             border: none;
-            padding: 15px 40px;
-            font-weight: bold;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            color: white;
+            display: block;
+            position: relative;
         }
 
-        .btn-primary-custom:hover {
-            background: #e68900;
-            transform: translateY(-2px);
-            color: white;
+        /* Overlay to prevent right-click and selection */
+        .pdf-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        /* Alternative: PDF as embedded object with disabled features */
+        .pdf-embed {
+            width: 100%;
+            height: 600px;
+            border: none;
+            pointer-events: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Watermark overlay */
+        .watermark-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="rgba(0,0,0,0.05)" font-size="20" transform="rotate(-45 100 100)">MAZZA ENGINEERING</text></svg>') repeat;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        /* Alternative viewer using images */
+        .pdf-image-viewer {
+            display: none;
+        }
+
+        .pdf-page-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
         }
 
         /* Footer */
@@ -344,46 +299,36 @@
             padding: 40px 0 20px;
         }
 
+        /* Security styles to prevent common download methods */
+        .no-select {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .page-header h1 {
                 font-size: 2rem;
             }
             
-            .story-content {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
             .section-title h2 {
                 font-size: 2rem;
             }
             
-            .stat-number {
-                font-size: 2rem;
+            .pdf-frame {
+                height: 400px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <span><i class="fas fa-phone"></i> (347) 227-7536</span>
-                    <span class="ms-4"><i class="fas fa-envelope"></i> info@example.com</span>
-                </div>
-                <div class="col-md-6 text-end">
-                    <span><i class="fas fa-map-marker-alt"></i> 5 Bowling Green, New York NY 10004</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Navigation -->
    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-        <div class="container">
+        <div class="container-fluid px-5">
             <a class="navbar-brand" href="#">
                 <img src="assets/images/logo.jpg" alt="BrickTower Logo" height="50">
             </a>
@@ -393,8 +338,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="about.html">ABOUT</a></li>
                     <li class="nav-item"><a class="nav-link" href="service.html">SERVICES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">GALLERY</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
                 </ul>
             </div>
@@ -426,77 +372,62 @@
                 <div class="col-12">
                     <div class="section-title">
                         <h2>Our Story</h2>
-                        <p>Founded with a vision to create safer, stronger homes that can withstand natural disasters while maintaining comfort and beauty.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="story-text">
-                        <h3>25+ Years of Excellence</h3>
-                        <p>BrickTower was established in 1998 with a simple yet powerful mission: to build homes that protect families while creating beautiful living spaces. Our founders recognized the growing need for disaster-resistant construction in an era of increasing natural disasters.</p>
-                        <p>Over the years, we have evolved from a small local construction company to a leading specialist in disaster-resistant architecture and construction. We've successfully completed over 500 projects, each one designed to withstand extreme weather conditions while maintaining aesthetic appeal.</p>
-                        <p>Today, we continue to innovate and lead the industry in sustainable, safe, and beautiful construction practices. Our commitment to quality, safety, and customer satisfaction remains unwavering.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="story-image">
-                        <i class="fas fa-building"></i>
-                        <span class="ms-3">Company History Image</span>
+                        <p>At Mazza Engineering, versatility is at the core of everything we do. As experienced jobbing subcontractors, we specialize in short production runs—many of which are unique, one-off components. Frequent changeovers and new setups are not just part of the job—they're challenges we embrace every day with skill and precision.</p>
+                        <br>
+                        <p>Our ability to deliver consistent quality under demanding conditions stems from a team that values craftsmanship, efficiency, and innovation. Each setup is handled with the utmost attention to detail, ensuring that every client receives a solution tailored to their exact needs.</p>
+                        <br>
+                        <p>We pride ourselves on smart, efficient administration powered by advanced computer systems. These tools enable us to streamline our workflow, improve turnaround times, and maintain the highest standards in customer service and machining quality.</p>
+                        <br>
+                        <p>Mazza Engineering is also proud to be a Level 4 B-BBEE compliant company, demonstrating our commitment to inclusive growth and transformation in South Africa's engineering sector.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
+    
+    <!-- Certificate Section - SECURE PDF VIEWER -->
+    <section class="content-section certificate-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat-item">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Projects Completed</div>
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Our Certification</h2>
+                        <p>View our official certification documents below</p>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat-item">
-                        <div class="stat-number">25+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat-item">
-                        <div class="stat-number">100+</div>
-                        <div class="stat-label">Expert Team</div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat-item">
-                        <div class="stat-number">99%</div>
-                        <div class="stat-label">Client Satisfaction</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission & Vision Section -->
-    <section class="content-section mission-vision">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="mission-card">
-                        <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
-                        <p>To create disaster-resistant homes that provide safety, comfort, and beauty for families while contributing to sustainable community development. We are committed to using innovative construction techniques and materials that not only protect against natural disasters but also promote environmental responsibility.</p>
-                        <p>We believe that every family deserves a home that is both safe and beautiful, and we work tirelessly to make this vision a reality through our expertise, dedication, and commitment to excellence.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="vision-card">
-                        <h3><i class="fas fa-eye"></i> Our Vision</h3>
-                        <p>To be the leading construction company recognized globally for pioneering disaster-resistant architecture and sustainable building practices. We envision a future where all homes are built to withstand natural disasters while maintaining architectural beauty and environmental harmony.</p>
-                        <p>Through continuous innovation, research, and collaboration with industry experts, we aim to set new standards in construction that prioritize safety, sustainability, and style.</p>
+                    <div class="pdf-container">
+                        <div class="secure-pdf-viewer">
+                            <div class="pdf-toolbar">
+                                <div class="pdf-title">
+                                    <i class="fas fa-certificate me-2"></i>
+                                    Official Certification Document
+                                </div>
+                                <div class="security-notice">
+                                    <i class="fas fa-shield-alt me-1"></i>
+                                    Secure View
+                                </div>
+                            </div>
+                            
+                            <!-- Method 1: Embedded PDF with security measures -->
+                            <div class="position-relative">
+                                <iframe
+                                    id="pdfViewer"
+                                    src="/assets/docs/certificate.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH&zoom=100"
+                                    class="pdf-frame no-select"
+                                    title="Certificate Document"
+                                    sandbox="allow-same-origin">
+                                </iframe>
+                                <div class="watermark-overlay"></div>
+                                <div class="pdf-overlay"></div>
+                            </div>
+                            
+                            <!-- Method 2: Alternative - PDF as images (uncomment if needed) -->
+                            <!--
+                            <div class="pdf-image-viewer" id="imageViewer">
+                                <img src="/assets/docs/certificate-page-1.jpg" alt="Certificate Page 1" class="pdf-page-image no-select">
+                                <img src="/assets/docs/certificate-page-2.jpg" alt="Certificate Page 2" class="pdf-page-image no-select">
+                            </div>
+                            -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -520,8 +451,8 @@
                         <div class="value-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h4>Safety First</h4>
-                        <p>Safety is our top priority in every project. We use the highest quality materials and follow strict safety protocols to ensure disaster-resistant construction.</p>
+                        <h4>Precision</h4>
+                        <p>We take pride in the accuracy of our work. Every component we machine reflects our commitment to excellence and attention to detail.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
@@ -529,8 +460,8 @@
                         <div class="value-icon">
                             <i class="fas fa-star"></i>
                         </div>
-                        <h4>Quality Excellence</h4>
-                        <p>We maintain the highest standards of craftsmanship and use premium materials to deliver exceptional results that exceed expectations.</p>
+                        <h4>Continuous Improvement</h4>
+                        <p>We embrace new challenges daily. Through constant learning, innovation, and system upgrades, we stay ahead of industry standards.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
@@ -538,8 +469,8 @@
                         <div class="value-icon">
                             <i class="fas fa-lightbulb"></i>
                         </div>
-                        <h4>Innovation</h4>
-                        <p>We continuously innovate and adopt new technologies and techniques to improve our construction methods and disaster-resistance capabilities.</p>
+                        <h4>Integrity</h4>
+                        <p>We build relationships on trust. Honesty, transparency, and respect guide every interaction—with clients, partners, and each other.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
@@ -547,80 +478,9 @@
                         <div class="value-icon">
                             <i class="fas fa-leaf"></i>
                         </div>
-                        <h4>Sustainability</h4>
-                        <p>We are committed to environmentally responsible construction practices that protect our planet for future generations.</p>
+                        <h4>Empowerment</h4>
+                        <p>As a Level 4 B-BBEE company, we're committed to transformation, skills development, and contributing to a more inclusive economy.</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="content-section team-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h2>Meet Our Team</h2>
-                        <p>The experienced professionals who make BrickTower a leader in disaster-resistant construction.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <h4>John Anderson</h4>
-                        <div class="position">CEO & Founder</div>
-                        <p>With over 25 years in construction and disaster-resistant architecture, John leads our company with vision and expertise.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <h4>Sarah Martinez</h4>
-                        <div class="position">Chief Architect</div>
-                        <p>Sarah brings innovative design solutions that combine aesthetic appeal with maximum disaster resistance and safety.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <h4>Michael Chen</h4>
-                        <div class="position">Construction Manager</div>
-                        <p>Michael ensures every project meets our high standards for quality, safety, and disaster resistance with meticulous attention to detail.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2>Ready to Build Your Dream Home?</h2>
-                    <p>Let's work together to create a beautiful, safe, and disaster-resistant home for your family.</p>
-                    <a href="#contact" class="btn-primary-custom">START YOUR PROJECT</a>
                 </div>
             </div>
         </div>
@@ -631,11 +491,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h5><i class="fas fa-building"></i> BRICKTOWER</h5>
+                    <h5>MAZZA ENGINEERING</h5>
                     <p>Building disaster-resistant homes with style and functionality. Your safety is our priority.</p>
                 </div>
                 <div class="col-md-6 text-end">
-                    <p>&copy; 2024 BrickTower. All rights reserved.</p>
+                    <p>&copy; 2024 MAZZA ENGINEERING. All rights reserved.</p>
                     <div class="social-links">
                         <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
                         <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
@@ -649,6 +509,60 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Security measures to prevent PDF downloading
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Disable right-click context menu on PDF viewer
+            const pdfViewer = document.getElementById('pdfViewer');
+            const pdfContainer = document.querySelector('.secure-pdf-viewer');
+            
+            if (pdfContainer) {
+                pdfContainer.addEventListener('contextmenu', function(e) {
+                    e.preventDefault();
+                    return false;
+                });
+                
+                // Disable drag and drop
+                pdfContainer.addEventListener('dragstart', function(e) {
+                    e.preventDefault();
+                    return false;
+                });
+                
+                // Disable text selection
+                pdfContainer.addEventListener('selectstart', function(e) {
+                    e.preventDefault();
+                    return false;
+                });
+            }
+            
+            // Disable common keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Disable Ctrl+S (Save), Ctrl+P (Print), Ctrl+A (Select All), F12 (Developer Tools)
+                if ((e.ctrlKey && (e.keyCode === 83 || e.keyCode === 80 || e.keyCode === 65)) || e.keyCode === 123) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+            
+            // Disable print screen (limited effectiveness)
+            document.addEventListener('keyup', function(e) {
+                if (e.keyCode === 44) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+            
+            // Alternative: Switch to image viewer if PDF fails to load
+            pdfViewer.addEventListener('error', function() {
+                console.log('PDF failed to load, switching to image viewer');
+                document.querySelector('.secure-pdf-viewer iframe').style.display = 'none';
+                const imageViewer = document.getElementById('imageViewer');
+                if (imageViewer) {
+                    imageViewer.style.display = 'block';
+                }
+            });
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -675,42 +589,22 @@
             }
         });
 
-        // Counter animation for stats
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            const speed = 200;
+        // Security warning for developer tools
+        let devtools = {open: false, orientation: null};
+        let threshold = 160;
 
-            counters.forEach(counter => {
-                const animate = () => {
-                    const value = +counter.getAttribute('data-target') || +counter.innerText.replace(/\D/g, '');
-                    const data = +counter.innerText.replace(/\D/g, '');
-                    const time = value / speed;
-                    
-                    if (data < value) {
-                        counter.innerText = Math.ceil(data + time) + (counter.innerText.includes('+') ? '+' : '') + (counter.innerText.includes('%') ? '%' : '');
-                        setTimeout(animate, 1);
-                    } else {
-                        counter.innerText = counter.getAttribute('data-target') || counter.innerText;
-                    }
-                };
-                animate();
-            });
-        }
-
-        // Trigger counter animation when stats section is visible
-        const statsSection = document.querySelector('.stats-section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    observer.unobserve(entry.target);
+        setInterval(function() {
+            if (window.outerHeight - window.innerHeight > threshold || 
+                window.outerWidth - window.innerWidth > threshold) {
+                if (!devtools.open) {
+                    devtools.open = true;
+                    console.clear();
+                    console.warn('Developer tools detected. Document access is restricted.');
                 }
-            });
-        });
-
-        if (statsSection) {
-            observer.observe(statsSection);
-        }
+            } else {
+                devtools.open = false;
+            }
+        }, 500);
     </script>
 </body>
 </html>
