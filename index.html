@@ -291,33 +291,124 @@
             border-radius: 20px;
         }
 
-        @media (max-width: 768px) {
-            .hero-alt-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-alt-content {
-                text-align: center;
-                padding: 1rem;
-            }
-            
-            .hero-alt-content p {
-                margin: 0 auto 2rem auto;
-            }
-            
-            .hero-alt-buttons {
-                justify-content: center;
-            }
-            
-            .hero-alt-stats {
-                justify-content: center;
-            }
-            
-            .hero-alt-image {
-                height: 50vh;
-            }
-        }
+        @media (max-width: 1200px) {
+    .hero-alt-content h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-alt-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
 
+@media (max-width: 991px) {
+    .hero-alt {
+        padding: 1rem 0;
+    }
+    
+    .hero-alt-grid {
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .hero-alt-content {
+        padding: 1rem;
+    }
+    
+    .hero-alt-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-alt-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-alt-content p {
+        font-size: 1rem;
+    }
+    
+    .btn-alt-primary, .btn-alt-secondary {
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .hero-alt-stats {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-alt {
+        min-height: auto;
+        padding: 3rem 0;
+    }
+    
+    .hero-alt-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    
+    .hero-alt-content {
+        text-align: center;
+        order: 2;
+    }
+    
+    .hero-alt-content p {
+        margin: 0 auto 2rem auto;
+    }
+    
+    .hero-alt-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .hero-alt-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .hero-alt-image {
+        order: 1;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-alt-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-alt-content h2 {
+        font-size: 1.2rem;
+    }
+    
+    .hero-alt-content p {
+        font-size: 0.9rem;
+    }
+    
+    .btn-alt-primary, .btn-alt-secondary {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-alt-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-item {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-alt-image {
+        height: 250px;
+    }
+}
         /* Alert Section */
         .alert-section {
             background: #fff3cd;
